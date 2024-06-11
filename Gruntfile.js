@@ -54,11 +54,11 @@ module.exports = function(grunt) {
                     patterns: [
                         {
                             match: 'ENDERECO_DO_CSS',
-                            replacement: '../styles/main.min.css'
+                            replacement: './styles/main.min.css'
                         },
                         {
                             match: 'ENDERECO_DO_JS',
-                            replacement: '../scripts/main.min.js'
+                            replacement: './scripts/main.min.js'
                         }
                     ]
                 },
@@ -101,5 +101,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'replace:dev', 'uglify']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 }
